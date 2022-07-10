@@ -29,9 +29,12 @@ def get_participants_data():
 
 def validate_data(values):
     """
-    Inside the try, raise ValueError if strings aren't exactly 6 values.
+    Inside the try, convert last 4 input values into integers.
+    Raise ValueError if last 4 string inputs cannot be converted into int,
+    or if there aren't exactly 6 values.
     """
     try:
+        [int(value) for value in values[2:]]
         if len(values) != 6:
             raise ValueError(
                 f"Exaclty 6 values required, you provided {len(values)}"
