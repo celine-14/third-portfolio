@@ -91,9 +91,11 @@ def calculate_average_level(participants_row):
     Calculate average music level for each paricipants
     """
     print("Calculating average level...\n")
-    level_sum = sum(participants_row)
-    level_average = level_sum / 4
-    print(level_average)
+    average_data = []
+    level_average = (sum(participants_row)) / 4
+    average_data.append(level_average)
+
+    return average_data
 
 
 def main():
@@ -106,7 +108,8 @@ def main():
     participants_level = [int(num) for num in data[2:]]
     update_participants_data(participants_data)
     update_participants_data_levels(participants_names)
-    calculate_average_level(participants_level)
+    new_average_level = calculate_average_level(participants_level)
+    print(new_average_level)
 
 
 print("Welcome to Participants Data Automation")
