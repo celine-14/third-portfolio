@@ -85,14 +85,16 @@ def update_participants_data_levels(data):
     levels_worksheet.append_row(data)
     print("Levels worksheet updated successfully.\n")
 
+
 def calculate_average_level(participants_row):
     """
     Calculate average music level for each paricipants
     """
     print("Calculating average level...\n")
-    levels = SHEET.worksheet("participants").get_all_values()
-    level_row = levels[-1]
-    print(level_row)
+    level_sum = sum(participants_row)
+    level_average = level_sum / 4
+    print(level_average)
+
 
 def main():
     """
