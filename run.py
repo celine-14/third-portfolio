@@ -29,11 +29,17 @@ def get_participants_data():
 
 def validate_data(values):
     """
-    Inside the try, convert last 4 input values into integers.
+    Inside the try, convert last 4 input values into integers, and validate first 2 input strings
     Raise ValueError if last 4 string inputs cannot be converted into int,
-    or if there aren't exactly 6 values.
+    if there aren't exactly 6 values, if first and last names are not provided.
     """
     try:
+        for value in values[:-4]:
+            if not value.isalpha() and len(value) < 2:
+                raise ValueError(
+                    f"First and Last name required, you only provided {value}"
+                    )
+
         [int(value) for value in values[2:]]
         if len(values) != 6:
             raise ValueError(
