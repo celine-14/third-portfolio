@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -84,6 +85,14 @@ def update_participants_data_levels(data):
     levels_worksheet.append_row(data)
     print("Levels worksheet updated successfully.\n")
 
+def calculate_average_level(participants_row):
+    """
+    Calculate average music level for each paricipants
+    """
+    print("Calculating average level...\n")
+    levels = SHEET.worksheet("participants").get_all_values()
+    level_row = levels[-1]
+    print(level_row)
 
 def main():
     """
@@ -92,8 +101,10 @@ def main():
     data = get_participants_data()
     participants_data = [name.capitalize() for name in data[:-4]] + [int(num) for num in data[2:]]
     participants_names = [name.capitalize() for name in data[:-4]]
+    participants_level = [int(num) for num in data[2:]]
     update_participants_data(participants_data)
     update_participants_data_levels(participants_names)
+    calculate_average_level(participants_level)
 
 
 print("Welcome to Participants Data Automation")
