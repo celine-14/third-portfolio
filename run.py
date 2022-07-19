@@ -17,14 +17,17 @@ def get_participants_data():
     """
     Get participants details from the user
     """
-    print("Please enter participants data.")
-    print("Data should include first name, last name, piano level, musicianship level, solfa level and conducting level, separated by commas.")
-    print("Example: Jane, Doe, 4, 2, 1, 3\n")
+    while True:
+        print("Please enter participants data.")
+        print("Data should include first name, last name, piano level, musicianship level, solfa level and conducting level, separated by commas.")
+        print("Example: Jane, Doe, 4, 2, 1, 3\n")
+        data_str = input("Enter your data here: ")
+        participants_data = data_str.split(",")
 
-    data_str = input("Enter your data here: ")
-
-    participants_data = data_str.split(",")
-    validate_data(participants_data)
+        if validate_data(participants_data):
+            print("Data is valid!")
+            break
+    return participants_data
 
 
 def validate_data(values):
@@ -35,11 +38,14 @@ def validate_data(values):
     """
     try:
         for value in values[:-4]:
-            if not value.isalpha() and len(value) < 2:
+            if not value.isalpha():
                 raise ValueError(
-                    f"First and Last name required, you only provided {value}"
+                    "First and Last name required. Names must be in alphabets"
                     )
-
+            elif len(value) < 2:
+                raise ValueError(
+                    "Names must be more than 1 letter"
+                    )
         [int(value) for value in values[2:]]
         if len(values) != 6:
             raise ValueError(
@@ -47,6 +53,9 @@ def validate_data(values):
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
 
 
-get_participants_data()
+data = get_participants_data()
