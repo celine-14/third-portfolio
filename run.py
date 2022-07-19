@@ -25,8 +25,8 @@ def get_participants_data():
         print("Please enter participants data.")
         print("Data should include first name, last name, piano level, \
 musicianship level, solfa level and conducting level, \
-separated by commas.")
-        print("Example: Jane, Doe, 4, 2, 1, 3\n")
+separated by commas without spaces.")
+        print("Example: Jane,Doe,4,2,1,3\n")
         data_str = input("Enter your data here: ")
         participants_data = data_str.split(",")
 
@@ -65,4 +65,16 @@ def validate_data(values):
     return True
 
 
+def update_participants_data(data):
+    """
+    Update participants worksheet, add new row with the list data provided.
+    """
+    print("Updating participants worksheet...\n")
+    participants_worksheet = SHEET.worksheet("participants")
+    participants_worksheet.append_row(data)
+    print("Participants worksheet updated successfully.\n")
+
+
 data = get_participants_data()
+participants_data = [name.capitalize() for name in data[:-4]] + [int(num) for num in data[2:]]
+update_participants_data(participants_data)
