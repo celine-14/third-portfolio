@@ -75,6 +75,26 @@ def update_participants_data(data):
     print("Participants worksheet updated successfully.\n")
 
 
-data = get_participants_data()
-participants_data = [name.capitalize() for name in data[:-4]] + [int(num) for num in data[2:]]
-update_participants_data(participants_data)
+def update_participants_data_levels(data):
+    """
+    Update levels worksheet, add new row with the list data provided.
+    """
+    print("Updating levels worksheet...\n")
+    levels_worksheet = SHEET.worksheet("levels")
+    levels_worksheet.append_row(data)
+    print("Levels worksheet updated successfully.\n")
+
+
+def main():
+    """
+    Run all program functions
+    """
+    data = get_participants_data()
+    participants_data = [name.capitalize() for name in data[:-4]] + [int(num) for num in data[2:]]
+    participants_names = [name.capitalize() for name in data[:-4]]
+    update_participants_data(participants_data)
+    update_participants_data_levels(participants_names)
+
+
+print("Welcome to Participants Data Automation")
+main()
