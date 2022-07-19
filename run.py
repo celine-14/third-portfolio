@@ -15,11 +15,17 @@ SHEET = GSPREAD_CLIENT.open('level_of_participants')
 
 def get_participants_data():
     """
-    Get participants details from the user
+    Get participants details from the user.
+    Run a while loop to collect a valid string of data from the user
+    via the terminal, which must be a string of first name,
+    last name, and 4 numbers separated by commas.
+    The loop will repeatedly request data until it is valid.
     """
     while True:
         print("Please enter participants data.")
-        print("Data should include first name, last name, piano level, musicianship level, solfa level and conducting level, separated by commas.")
+        print("Data should include first name, last name, piano level, \
+musicianship level, solfa level and conducting level, \
+separated by commas.")
         print("Example: Jane, Doe, 4, 2, 1, 3\n")
         data_str = input("Enter your data here: ")
         participants_data = data_str.split(",")
@@ -32,7 +38,8 @@ def get_participants_data():
 
 def validate_data(values):
     """
-    Inside the try, convert last 4 input values into integers, and validate first 2 input strings
+    Inside the try, convert last 4 input values into integers,
+    and validate first 2 input strings.
     Raise ValueError if last 4 string inputs cannot be converted into int,
     if there aren't exactly 6 values, if first and last names are not provided.
     """
