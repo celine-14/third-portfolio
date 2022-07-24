@@ -32,7 +32,8 @@ def get_participant_data():
         print("Example: Jane,Doe,4,2,1,3\n")
         data_str = input("Enter your data here: ")
         participant_data = data_str.split(",")
-        participant_data = participant_data[:2] + [int(value) for value in participant_data[2:]]
+        data_integer = [int(value) for value in participant_data[2:]]
+        participant_data = participant_data[:2] + data_integer
 
         if validate_data(participant_data):
             print("Data is valid!")
@@ -50,10 +51,9 @@ def validate_data(values):
     error_message = ""
     for value in values[:2]:
         if not value.isalpha():
-            error_message = "First and Last name required. Names must be in alphabets"
+            error_message = "First and Last name must be in alphabets"
         elif len(value) < 2:
-            error_message = "Names must be more than 1 letter"
-            
+            error_message = "Names must be more than 1 letter"         
     if len(values) != 6:
         error_message = f"Exaclty 6 values required, you provided {len(values)}"
 
@@ -98,9 +98,9 @@ def main():
     Run all program functions
     """
     data = get_participant_data()
-    participant_data = [name.capitalize() for name in data[:2]] + [int(num) for num in data[2:]]
     participant_names = [name.capitalize() for name in data[:2]]
     participant_levels = [int(num) for num in data[2:]]
+    participant_data = participant_names + participant_levels
     update_participant_data(participant_data)
 
     new_average_level = calculate_average_level(participant_levels)
