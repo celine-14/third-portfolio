@@ -72,13 +72,14 @@ def update_participant_data(data):
 
 def calculate_average_level(participant_levels):
     """
-    Calculate average music level for each paricipants
+    Calculate average music level for each paricipants,
+    and round up to the nearest integer.
     """
     print("Calculating average level...\n")
     average_data = []
-    level_average = (sum(participant_levels)) / 4
+    level_average = int(round((sum(participant_levels)) / 4))
     average_data.append(level_average)
-
+    print(average_data)
     return average_data
 
 
@@ -105,7 +106,6 @@ def main():
     new_average_level = calculate_average_level(participant_levels)
     participant_average_level = participant_names + new_average_level
     update_participant_data_levels(participant_average_level)
-    print(new_average_level)
 
 
 print("Welcome to Participants Data Automation")
