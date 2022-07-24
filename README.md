@@ -9,15 +9,23 @@
 # Participants Data Automation
 
 ## Introduction
-
+This data automation collects participants' data, calculate the average level and assigns participants to their respective class levels. The different music areas that takes into account when assigning classes are piano level, musicianship level, solfa level and conducting level.
 
 ![Lucid Chart](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/lucid_chart.png?raw=true)
 
 ## Testing
 
 ### User Input Testing
+- Parameters: First Name, Last Name, Piano Level, Musicianship Level, Solfa Level and Conducting Level
+  - An error message will be printed to the console if the following requirements are not met:
+    - Has 6 input values
+    - Values are separated by commas without space
+    - First 2 inputs in alphabets and last 4 inputs in numbers
+    - First and last names provided must be more than one letter
+  - The terminal will repeatedly request for data until data is valid
 
 ### Validator Testing
+- No errors were returned when passing through code validation [PEP8](https://pep8online.com/)
 
 
 ## Deployment
