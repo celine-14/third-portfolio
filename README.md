@@ -1,17 +1,29 @@
 ## Table of Contents
 * [Introduction](#introduction)
+* [Data Model](#data-model)
 * [Testing](#testing)
     * [User Input Testing Testing](#user-input-testing)
     * [Validator Testing](#validator-testing)
 * [Deployment](#deployment)
+    * [Live Link](#live-link)
+    * [Repository](#repository)
 * [Credits](#credits)
 
 # Participants Data Automation
 
 ## Introduction
-This data automation collects participants' data, calculate the average level and assigns participants to their respective class levels. The different music areas that takes into account when assigning classes are piano level, musicianship level, solfa level and conducting level.
+This data automation collects participants' data, calculate the average level and assigns participants to their respective class levels. The different music areas that takes into account when assigning classes are piano level, musicianship level, solfa level and conducting level. Flow chart below shows the logic of my project.
 
 ![Lucid Chart](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/lucid_chart.png?raw=true)
+
+
+## Data Model
+A [Google Sheet](https://docs.google.com/spreadsheets/d/1NDjFUzCVzWmVwDyq-RfDqaUb0VehFTpRIXjt0rYkl9I/edit#gid=248498461) is used to store participants' data including their first and last names, piano level, musicianship level, solfa level and conducting level.
+
+![Google Sheet](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/google_sheet.png?raw=true)
+
+### API Credentials
+To allow access from the project to Google Sheets, credentials must be generated and provided.
 
 ## Testing
 
@@ -47,7 +59,12 @@ This data automation collects participants' data, calculate the average level an
   - Clicked the "Deploy" button
   - Terminal is up and running and no errors, indicating the successful deployment
 
-The live link can be found here - https://celine-14.github.io/third-portfolio/
+### Live Link
+[Participants Data Automation](https://level-of-participants.herokuapp.com/)
+
+### Repository
+[Github Repository](https://github.com/celine-14/third-portfolio)
+
 
 ## Credits
 
