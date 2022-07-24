@@ -45,20 +45,20 @@ def validate_data(values):
     Raise ValueError if last 4 string inputs cannot be converted into int,
     if there aren't exactly 6 values, if first and last names are not provided.
     """
-    error_message = ""
+    error_msg = ""
     for value in values[:2]:
         if not value.isalpha():
-            error_message = "First and Last name must be in alphabets"
+            error_msg = "First and Last name must be in alphabets"
         elif len(value) < 2:
-            error_message = "Names must be more than 1 letter"         
+            error_msg = "Names must be more than 1 letter"
     if len(values) != 6:
-        error_message = f"Exaclty 6 values required, you provided {len(values)}"
+        error_msg = f"Exaclty 6 values required, you provided {len(values)}"
     for value in values[2:]:
         if not value.isdigit():
-            error_message = f"All levels must be numbers, you provided {value}"
+            error_msg = f"All levels must be numbers, you provided {value}"
 
-    print(error_message)
-    return error_message == ""
+    print(error_msg)
+    return error_msg == ""
 
 
 def update_participant_data(data):
@@ -129,7 +129,8 @@ def main():
 
     expertise = levels(new_average_level)
     print(
-        f"{' '.join(participant_names)}'s average level is {str(*new_average_level)}\n"
+        f"{' '.join(participant_names)}'s average level"
+        f" is {str(*new_average_level)}\n"
         f"{' '.join(participant_names)} should be in a {expertise}'s Class"
         )
 
