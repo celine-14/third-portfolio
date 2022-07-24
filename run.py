@@ -1,6 +1,5 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -30,7 +29,7 @@ def get_participant_data():
             "separated by commas without spaces."
             )
         print("Example: Jane,Doe,4,2,1,3\n")
-        data_str = input("Enter your data here: ")
+        data_str = input("Enter your data here:\n")
         participant_data = data_str.split(",")
         data_integer = [int(value) for value in participant_data[2:]]
         participant_data = participant_data[:2] + data_integer
