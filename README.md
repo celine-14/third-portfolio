@@ -26,7 +26,7 @@ A [Google Sheet](https://docs.google.com/spreadsheets/d/1NDjFUzCVzWmVwDyq-RfDqaU
 
   - levels
     - This worksheet stores participants' first and last names, and their average level of music knowledge based on their piano, musicianship, solfa and conducting skills.
-    ![Levels Worksheet](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/levels_sheet.png?raw=true)
+    ![Levels Worksheet](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/levels_worksheet.png?raw=true)
 
 
 ### API Credentials
