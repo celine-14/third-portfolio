@@ -31,8 +31,6 @@ def get_participant_data():
         print("Example: Jane,Doe,4,2,1,3\n")
         data_str = input("Enter your data here:\n")
         participant_data = data_str.split(",")
-        data_integer = [int(value) for value in participant_data[2:]]
-        participant_data = participant_data[:2] + data_integer
 
         if validate_data(participant_data):
             print("Data is valid!")
@@ -55,6 +53,9 @@ def validate_data(values):
             error_message = "Names must be more than 1 letter"         
     if len(values) != 6:
         error_message = f"Exaclty 6 values required, you provided {len(values)}"
+    for value in values[2:]:
+        if not value.isdigit():
+            error_message = f"All levels must be numbers, you provided {value}"
 
     print(error_message)
     return error_message == ""
@@ -92,6 +93,26 @@ def update_participant_data_levels(data):
     print("Levels worksheet updated successfully.\n")
 
 
+def levels(average_data):
+    """
+    Assign calculated average data of participant
+    to the correct level of expertise.
+    """
+    for data in average_data:
+        if data < 2:
+            expertise = "Novice"
+        elif data < 5:
+            expertise = "Beginner"
+        elif data < 8:
+            expertise = "Intermediate"
+        elif data < 10:
+            expertise = "Advanced"
+        else:
+            expertise = "Expert"
+
+    return expertise
+
+
 def main():
     """
     Run all program functions
@@ -105,8 +126,11 @@ def main():
     new_average_level = calculate_average_level(participant_levels)
     participant_average_level = participant_names + new_average_level
     update_participant_data_levels(participant_average_level)
+
+    expertise = levels(new_average_level)
     print(
-        f"{' '.join(participant_names)}'s average level is {str(*new_average_level)}"
+        f"{' '.join(participant_names)}'s average level is {str(*new_average_level)}\n"
+        f"{' '.join(participant_names)} should be in a {expertise}'s Class"
         )
 
 
