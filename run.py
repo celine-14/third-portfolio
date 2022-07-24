@@ -79,7 +79,6 @@ def calculate_average_level(participant_levels):
     average_data = []
     level_average = int(round((sum(participant_levels)) / 4))
     average_data.append(level_average)
-    print(average_data)
     return average_data
 
 
@@ -106,6 +105,9 @@ def main():
     new_average_level = calculate_average_level(participant_levels)
     participant_average_level = participant_names + new_average_level
     update_participant_data_levels(participant_average_level)
+    print(
+        f"{' '.join(participant_names)}'s average level is {str(*new_average_level)}"
+        )
 
 
 print("Welcome to Participants Data Automation")
