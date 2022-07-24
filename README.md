@@ -1,6 +1,7 @@
 ## Table of Contents
 * [Introduction](#introduction)
 * [Data Model](#data-model)
+    * [API Credentials](#api-credentials)
 * [Testing](#testing)
     * [User Input Testing Testing](#user-input-testing)
     * [Validator Testing](#validator-testing)
@@ -31,6 +32,8 @@ A [Google Sheet](https://docs.google.com/spreadsheets/d/1NDjFUzCVzWmVwDyq-RfDqaU
 
 ### API Credentials
 To allow access from the project to Google Sheets, credentials must be generated and provided.
+  - Google Drive API
+  - Google Sheets API
 
 ## Testing
 
