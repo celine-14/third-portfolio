@@ -18,9 +18,16 @@ This data automation collects participants' data, calculate the average level an
 
 
 ## Data Model
-A [Google Sheet](https://docs.google.com/spreadsheets/d/1NDjFUzCVzWmVwDyq-RfDqaUb0VehFTpRIXjt0rYkl9I/edit#gid=248498461) is used to store participants' data including their first and last names, piano level, musicianship level, solfa level and conducting level.
+A [Google Sheet](https://docs.google.com/spreadsheets/d/1NDjFUzCVzWmVwDyq-RfDqaUb0VehFTpRIXjt0rYkl9I/edit#gid=248498461) is used to store participants' data. There are two worksheets: 
 
-![Google Sheet](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/google_sheet.png?raw=true)
+  - participants
+    - This worksheet stores participants' first and last names, piano level, musicianship level, solfa level and conducting level.
+    ![Participants Worksheet](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/participants_worksheet.png?raw=true)
+
+  - levels
+    - This worksheet stores participants' first and last names, and their average level of music knowledge based on their piano, musicianship, solfa and conducting skills.
+    ![Levels Worksheet](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/levels_sheet.png?raw=true)
+
 
 ### API Credentials
 To allow access from the project to Google Sheets, credentials must be generated and provided.
