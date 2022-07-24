@@ -71,16 +71,6 @@ def update_participant_data(data):
     print("Participants worksheet updated successfully.\n")
 
 
-def update_participant_data_levels(data):
-    """
-    Append the levels worksheet add new row with the names provided.
-    """
-    print("Updating levels worksheet...\n")
-    levels_worksheet = SHEET.worksheet("levels")
-    levels_worksheet.append_row(data)
-    print("Levels worksheet updated successfully.\n")
-
-
 def calculate_average_level(participant_levels):
     """
     Calculate average music level for each paricipants
@@ -93,17 +83,29 @@ def calculate_average_level(participant_levels):
     return average_data
 
 
+def update_participant_data_levels(data):
+    """
+    Append the levels worksheet add new row with the names provided.
+    """
+    print("Updating levels worksheet...\n")
+    levels_worksheet = SHEET.worksheet("levels")
+    levels_worksheet.append_row(data)
+    print("Levels worksheet updated successfully.\n")
+
+
 def main():
     """
     Run all program functions
     """
     data = get_participant_data()
-    participant_data = [name.capitalize() for name in data[:-4]] + [int(num) for num in data[2:]]
-    participant_names = [name.capitalize() for name in data[:-4]]
+    participant_data = [name.capitalize() for name in data[:2]] + [int(num) for num in data[2:]]
+    participant_names = [name.capitalize() for name in data[:2]]
     participant_levels = [int(num) for num in data[2:]]
     update_participant_data(participant_data)
-    update_participant_data_levels(participant_names)
+
     new_average_level = calculate_average_level(participant_levels)
+    participant_average_level = participant_names + new_average_level
+    update_participant_data_levels(participant_average_level)
     print(new_average_level)
 
 
