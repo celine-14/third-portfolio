@@ -11,7 +11,7 @@
 ## Introduction
 
 
-![Lucid Chart](https://github.com/celine-14/second-portfolio/blob/main/docs/screenshots/lucid_chart.png?raw=true)
+![Lucid Chart](https://github.com/celine-14/third-portfolio/blob/main/docs/screenshots/lucid_chart.png?raw=true)
 
 ## Testing
 
