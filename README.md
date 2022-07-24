@@ -6,7 +6,7 @@
 * [Deployment](#deployment)
 * [Credits](#credits)
 
-# Classical Music Quiz
+# Participants Data Automation
 
 ## Introduction
 
@@ -39,13 +39,12 @@
   - Clicked the "Deploy" button
   - Terminal is up and running and no errors, indicating the successful deployment
 
-The live link can be found here - https://celine-14.github.io/second-portfolio/
+The live link can be found here - https://celine-14.github.io/third-portfolio/
 
 ## Credits
 
-- The fonts were imported from [Google Fonts](https://fonts.google.com/).
+- The flowchart is generated from [Lucid](https://lucid.app/).
 
-- Favicon is generated from [Favicon](https://favicon.io/). 
 
 
 
